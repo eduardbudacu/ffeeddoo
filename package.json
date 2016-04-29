@@ -1,0 +1,38 @@
+{
+    "name" : "ffeeddoo",
+    "description" : "",
+    "version" : "0.1.0",
+    "author" : "Eduard Budacu <eduard.budacu@koding.ro>",
+    "contributors" : [],
+    "repository" : {
+        "type" : "git",
+        "url" : "git://github.com/eduarbudacu/ffeeddoo.git"
+    },
+    "bugs" : "http://github.com/eduarbudacu/ffeeddoo/issues",
+    "publishConfig" : {
+        "registry" : "https://registry.npmjs.org"
+    },
+    "engines" : {
+        "node" : "~0.10.22"
+    },
+    "dependencies": {
+        "express": "^4.0.0",
+        "body-parser": "^1.9.0",
+        "swaggerize-express": "^4.0.0"
+    },
+    "devDependencies": {
+        "tape": "^3.0.0",
+        "js-yaml": "^3.2.6",
+        "jshint": "^2.4.1",
+        "istanbul": "~0.2.3",
+        "enjoi": "^1.0.2" ,
+        "supertest": "~0.13.0"
+    },
+    "scripts": {
+        "test": "tape tests/*.js",
+        "cover": "istanbul cover tape -- test/*.js",
+        "lint": "jshint -c .jshintrc --exclude ./node_modules .",
+        "regenerate": "yo swaggerize --only=handlers,models,tests --framework express --apiPath config\api.json"
+    },
+    "main" : "./server"
+}
