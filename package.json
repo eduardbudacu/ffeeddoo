@@ -32,7 +32,7 @@
         "test": "tape tests/*.js",
         "cover": "istanbul cover tape -- test/*.js",
         "lint": "jshint -c .jshintrc --exclude ./node_modules .",
-        "regenerate": "yo swaggerize --only=handlers,models,tests --framework express --apiPath config\api.json"
+        "regenerate": "yo swaggerize --only=handlers,models,tests --framework express --apiPath config\\api.json"
     },
     "main" : "./server"
 }
