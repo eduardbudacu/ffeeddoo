@@ -1,6 +1,6 @@
 'use strict';
 
-var port = process.env.PORT || 80; // first change
+var port = process.env.PORT || 8000; // first change
 
 var http = require('http');
 var express = require('express');
@@ -26,6 +26,6 @@ app.use('/docs', swaggerUi({
   docs: '/swagger'  
 }));
 
-server.listen(80, function () {
+server.listen(port, function () {
     app.swagger.api.host = undefined;
 });
