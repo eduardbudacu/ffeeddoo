@@ -1,0 +1,2 @@
+D:\dev.nicu\ffeeddoo\start\ffeeddoo\obj\Debug\ffeeddoo.njsprojResolveAssemblyReference.cache
+D:\dev.nicu\ffeeddoo\start\ffeeddoo\bin\Microsoft.NodejsTools.WebRole.dll

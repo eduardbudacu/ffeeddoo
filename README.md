@@ -5,8 +5,8 @@
   "swagger": "2.0",
   "info": {
     "version": "v1",
-    "title": "Contact List",
-    "description": "A Contact list API based on Swagger and built using Node.js"
+    "title": "FFEEDDOO",
+    "description": "RESTful abstractisation for product catalog"
   },
   "host": "localhost",
   "schemes": [
@@ -131,6 +131,72 @@
         },
         "deprecated": false
       }
+    },
+    "/product/{id}/stock": {
+      "get": {
+        "tags": [
+          "Products"
+        ],
+        "operationId": "product_getStockById",
+        "consumes": [],
+        "produces": [
+          "application/json",
+          "text/json"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "type": "array",
+              "items": {
+                "$ref": "#/definitions/ProductStock"
+              }
+            }
+          }
+        },
+        "deprecated": false
+      }
+    },
+    "/product/{id}/prices": {
+      "get": {
+        "tags": [
+          "Products"
+        ],
+        "operationId": "product_getPricesById",
+        "consumes": [],
+        "produces": [
+          "application/json",
+          "text/json"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "type": "array",
+              "items": {
+                "$ref": "#/definitions/ProductPrice"
+              }
+            }
+          }
+        },
+        "deprecated": false
+      }
     }
   },
   "definitions": {
@@ -179,6 +245,63 @@
         "warranty": {
           "format": "int32",
           "type": "integer"
+        }
+      }
+    },
+    "ProductStock": {
+      "type": "object",
+      "properties": {
+        "product_id": {
+          "type": "string"
+        },
+        "supplier_id": {
+          "type": "string"
+        },
+        "supplier_name": {
+          "type": "string"
+        },
+        "stock_value": {
+          "type": "integer"
+        },
+        "reserved_stock_value": {
+          "type": "integer"
+        },
+        "supplier_stock_value": {
+          "type": "integer"
+        },
+        "supplier_stock_delivery_date": {
+          "type": "integer"
+        }
+      }
+    },
+    "ProductPrice": {
+      "type": "object",
+      "properties": {
+        "product_id": {
+          "type": "string"
+        },
+        "supplier_id": {
+          "type": "string"
+        },
+        "supplier_name": {
+          "type": "string"
+        },
+        "price": {
+          "type": "decimal"
+        },
+        "price_components": {
+          "type": "array",
+          "items": {
+            "value": {
+              "type": "decimal"
+            },
+            "type": {
+              "type": "string"
+            },
+            "description": {
+              "type": "string"
+            }
+          }
         }
       }
     }
