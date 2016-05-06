@@ -6,7 +6,7 @@
   "info": {
     "version": "v1",
     "title": "FFEEDDOO",
-    "description": "RESTful abstractization for product catalog"
+    "description": "RESTful webservice for your product catalog"
   },
   "host": "localhost",
   "schemes": [

@@ -1,10 +1,8 @@
 'use strict';
-
 /**
  * Operations on /products/{id}/stock
  */
 module.exports = {
-    
     /**
      * 
      * parameters: id
@@ -13,5 +11,4 @@ module.exports = {
     get: function product_getStockById(req, res) {
         res.sendStatus(501);
     }
-    
 };
