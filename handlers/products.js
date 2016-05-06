@@ -2,9 +2,7 @@
 /**
  * Operations on /products
  */
-
-var repository = require('../lib/productRepository'); 
- 
+var repository = require('../lib/productRepository');
 module.exports = {
     /**
      * 

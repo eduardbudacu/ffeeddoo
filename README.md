@@ -6,7 +6,7 @@
   "info": {
     "version": "v1",
     "title": "FFEEDDOO",
-    "description": "RESTful abstractisation for product catalog"
+    "description": "RESTful abstractization for product catalog"
   },
   "host": "localhost",
   "schemes": [
@@ -15,65 +15,6 @@
   ],
   "basePath": "/",
   "paths": {
-    "/contacts": {
-      "get": {
-        "tags": [
-          "Contacts"
-        ],
-        "operationId": "contacts_get",
-        "consumes": [],
-        "produces": [
-          "application/json",
-          "text/json"
-        ],
-        "responses": {
-          "200": {
-            "description": "OK",
-            "schema": {
-              "type": "array",
-              "items": {
-                "$ref": "#/definitions/Contact"
-              }
-            }
-          }
-        },
-        "deprecated": false
-      }
-    },
-    "/contacts/{id}": {
-      "get": {
-        "tags": [
-          "Contacts"
-        ],
-        "operationId": "contacts_getById",
-        "consumes": [],
-        "produces": [
-          "application/json",
-          "text/json"
-        ],
-        "parameters": [
-          {
-            "name": "id",
-            "in": "path",
-            "required": true,
-            "type": "integer",
-            "format": "int32"
-          }
-        ],
-        "responses": {
-          "200": {
-            "description": "OK",
-            "schema": {
-              "type": "array",
-              "items": {
-                "$ref": "#/definitions/Contacts"
-              }
-            }
-          }
-        },
-        "deprecated": false
-      }
-    },
     "/products": {
       "get": {
         "tags": [
@@ -99,7 +40,7 @@
         "deprecated": false
       }
     },
-    "/product/{id}": {
+    "/products/{id}": {
       "get": {
         "tags": [
           "Products"
@@ -132,7 +73,7 @@
         "deprecated": false
       }
     },
-    "/product/{id}/stock": {
+    "/products/{id}/stock": {
       "get": {
         "tags": [
           "Products"
@@ -165,7 +106,7 @@
         "deprecated": false
       }
     },
-    "/product/{id}/prices": {
+    "/products/{id}/prices": {
       "get": {
         "tags": [
           "Products"
@@ -200,21 +141,6 @@
     }
   },
   "definitions": {
-    "Contact": {
-      "type": "object",
-      "properties": {
-        "id": {
-          "format": "int32",
-          "type": "integer"
-        },
-        "name": {
-          "type": "string"
-        },
-        "email": {
-          "type": "string"
-        }
-      }
-    },
     "Product": {
       "type": "object",
       "properties": {
