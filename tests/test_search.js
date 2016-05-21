@@ -15,27 +15,27 @@ test('api', function (t) {
     
 
     app.use(swaggerize({
-        api: path.join(__dirname, './..\config\api.json'),
-        handlers: path.join(__dirname, '..\handlers')
+        api: path.join(__dirname, './../config/api.json'),
+        handlers: path.join(__dirname, '../handlers')
     }));
 
     
-    t.test('test get /product/{id}', function (t) {
+    t.test('test get /search', function (t) {
         
         var responseSchema = enjoi({
             'type': "array", 
             'items': {"$ref":"#/definitions/Product"}
         }, {
                 subSchemas: {
-                    '#':  require(Path.join(__dirname, './..\config\api.json')) 
+                    '#':  require(path.join(__dirname, './../config/api.json')) 
                 }
         });
         
 
-        request(app).get('//product/helloworld')
+        request(app).get('//search')
         .end(function (err, res) {
-            t.ok(!err, 'get /product/{id} no error.');
-            t.strictEqual(res.statusCode, 200, 'get /product/{id} 200 status.');
+            t.ok(!err, 'get /search no error.');
+            t.strictEqual(res.statusCode, 200, 'get /search 200 status.');
             responseSchema.validate(res.body, function (error) {
                 t.ok(!error, 'Response schema valid.');
             });

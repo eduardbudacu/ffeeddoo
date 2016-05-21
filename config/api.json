@@ -110,6 +110,33 @@
 				},
 				"deprecated": false
 			}
+		},
+		"/search": {
+			"get": {
+				"tags": ["Search"],
+				"operationId": "product_searchFullText",
+				"consumes": [],
+				"produces": ["application/json",
+				"text/json"],
+				"parameters": [{
+					"name": "name",
+					"in": "query",
+					"required": true,
+					"type": "string"
+				}],
+				"responses": {
+					"200": {
+						"description": "OK",
+						"schema": {
+							"type": "array",
+							"items": {
+								"$ref": "#/definitions/Product"
+							}
+						}
+					}
+				},
+				"deprecated": false
+			}
 		}
 	},
 	"definitions": {
@@ -129,7 +156,7 @@
 					"type": "string"
 				},
 				"category_id": {
-					"type": "string"
+					"type": "integer"
 				},
 				"category_name": {
 					"type": "string"

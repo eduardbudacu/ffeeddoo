@@ -10,6 +10,13 @@ module.exports = {
      * produces: application/json, text/json
      */
     get: function product_getById(req, res) {
-        res.json(repository.get(req.params['id']));
+		var callback = function(err, data) {
+			if(err) {
+				res.sendStatus(404);
+			} else {
+				res.json(data);
+			}
+		}
+		repository.getFromMongo(req.params['id'], callback); 
     }
 };
