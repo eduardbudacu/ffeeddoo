@@ -15,8 +15,8 @@ test('api', function (t) {
     
 
     app.use(swaggerize({
-        api: path.join(__dirname, './..\config\api.json'),
-        handlers: path.join(__dirname, '..\handlers')
+        api: path.join(__dirname, './../config/api.json'),
+        handlers: path.join(__dirname, '../handlers')
     }));
 
     
@@ -27,12 +27,12 @@ test('api', function (t) {
             'items': {"$ref":"#/definitions/Product"}
         }, {
                 subSchemas: {
-                    '#':  require(Path.join(__dirname, './..\config\api.json')) 
+                    '#':  require(path.join(__dirname, './../config/api.json')) 
                 }
         });
         
 
-        request(app).get('//products')
+        request(app).get('/products')
         .end(function (err, res) {
             t.ok(!err, 'get /products no error.');
             t.strictEqual(res.statusCode, 200, 'get /products 200 status.');

@@ -10,6 +10,12 @@ module.exports = {
      * produces: application/json, text/json
      */
     get: function products_get(req, res) {
-        res.json(repository.all());
+		var callback = function(err, products) {
+			if(err) {
+				res.sendStatus(500);
+			}
+			res.json(products);
+		}
+		repository.getAllFromMongo(callback);
     }
 };
