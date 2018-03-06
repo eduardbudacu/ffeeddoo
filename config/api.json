@@ -212,19 +212,22 @@
 					"type": "string"
 				},
 				"price": {
-					"type": "decimal"
+					"type": "number"
 				},
 				"price_components": {
 					"type": "array",
 					"items": {
-						"value": {
-							"type": "decimal"
-						},
-						"type": {
-							"type": "string"
-						},
-						"description": {
-							"type": "string"
+						"type": "object", 
+						"properties": {
+							"value": {
+								"type": "number"
+							},
+							"type": {
+								"type": "string"
+							},
+							"description": {
+								"type": "string"
+							}
 						}
 					}
 				}
