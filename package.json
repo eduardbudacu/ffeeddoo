@@ -13,7 +13,7 @@
     "registry": "https://registry.npmjs.org"
   },
   "engines": {
-    "node": ">=4.2.6"
+    "node": "4.5.0"
   },
   "dependencies": {
     "async": "^2.0.0-rc.5",
