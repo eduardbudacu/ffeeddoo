@@ -16,6 +16,6 @@ module.exports = {
 			}
 			res.json(products);
 		}
-		repository.getAllFromMongo(callback);
+		repository.getAllFromMongo(req.query, callback);
     }
 };
