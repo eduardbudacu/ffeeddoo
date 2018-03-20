@@ -16,6 +16,12 @@
 				"consumes": [],
 				"produces": ["application/json",
 				"text/json"],
+				"parameters": [{
+					"name":"skip",
+					"in":"query",
+					"required":false,
+					"type":"string"
+				}],
 				"responses": {
 					"200": {
 						"description": "OK",
