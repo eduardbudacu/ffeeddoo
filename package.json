@@ -22,7 +22,7 @@
     "jsonpath": "^0.2.2",
     "mongodb": "^2.1.19",
     "mysql": "^2.11.1",
-    "sequelize": "^3.24.3",
+    "sequelize": "^6.3.5",
     "swaggerize-express": "^4.0.0",
     "swaggerize-ui": "^1.0.1"
   },
